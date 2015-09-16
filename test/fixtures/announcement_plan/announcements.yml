@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+announcement_1:
+  title: titel1
+  tekst: MyText1
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 1
+  id: 1
+
+announcement_2:
+  title: titel2
+  tekst: MyText2
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 2
+  id: 2

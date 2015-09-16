@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+role_1:
+  naam: manager
+  id: 1
+
+role_2:
+  naam: admin
+  id: 2
+
+role_3:
+  naam: employee
+  id: 3
+
+role_4:
+  naam: guest
+  id: 4

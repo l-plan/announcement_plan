@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+category_1:
+  name: maintenance
+  id: 1
+
+category_2::
+  name: 'update application'
+  id: 2
+
+category_3::
+  name: 'update tax rules'
+  id: 3

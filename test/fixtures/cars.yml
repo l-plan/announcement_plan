@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+car_1:
+  color: grey
+  year: 1996
+  brand: volvo
+  model: 850
+  id: 1
+
+car_2:
+  color: blue
+  year: 2011
+  brand: ford
+  model: mondeo
+  id: 2

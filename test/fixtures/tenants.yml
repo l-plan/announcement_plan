@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+tenant_1:
+  administration: apple
+  id: 1
+
+tenant_2:
+  administration: microsoft
+  id: 2
+
+tenant_3:
+  administration: samsung
+  id: 3
