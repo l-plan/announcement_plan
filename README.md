@@ -58,3 +58,9 @@ what gets included
 ### configuration
 
 you can override the gems defaults by creating an initializer-file in your apps initializers directory. 
+
+### testing
+
+testing a single file:
+
+	$ rake TEST='test/controllers/announcement_plan/announcements_controller_test.rb'
