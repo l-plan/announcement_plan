@@ -2,16 +2,20 @@
 
 role_1:
   naam: manager
+  user_id: 1
   id: 1
 
 role_2:
   naam: admin
+  user_id: 2
   id: 2
 
 role_3:
   naam: employee
+  user_id: 3
   id: 3
 
 role_4:
   naam: guest
+  user_id: 4
   id: 4

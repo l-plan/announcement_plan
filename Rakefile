@@ -4,6 +4,7 @@ rescue LoadError
   puts 'You must `gem install bundler` and `bundle install` to run rake tasks'
 end
 
+require 'pry'
 require 'rdoc/task'
 
 RDoc::Task.new(:rdoc) do |rdoc|
@@ -32,6 +33,18 @@ Rake::TestTask.new(:test) do |t|
   t.pattern = 'test/**/*_test.rb'
   t.verbose = false
 end
+
+namespace :db do
+  namespace :fixtures do
+    desc "load fixtures into development"
+    task :development do
+        RAILS_ENV = 'development'
+        Rake::Task["db:fixtures:load"].invoke( ActiveRecord::Tasks::DatabaseTasks.fixtures_path = 'test/fixtures' ) 
+    end
+  end
+end
+
+
 
 
 task default: :test

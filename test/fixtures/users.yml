@@ -2,8 +2,20 @@
 
 user_1:
   name: rolf
+  tenant_id: 1
   id: 1
 
 user_2:
   name: mandy
+  tenant_id: 2
   id: 2
+
+user_3:
+  name: pepijn
+  tenant_id: 3
+  id: 3
+
+user_4:
+  name: olivier
+  tenant_id: 1
+  id: 4

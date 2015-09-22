@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 20150916095508) do
 
   create_table "roles", force: :cascade do |t|
     t.string   "naam",       limit: 255
+    t.integer  "user_id",    limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -99,6 +100,7 @@ ActiveRecord::Schema.define(version: 20150916095508) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name",       limit: 255
+    t.integer  "tenant_id",  limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
