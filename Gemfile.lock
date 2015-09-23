@@ -130,6 +130,3 @@ DEPENDENCIES
   announcement_plan!
   mysql2 (= 0.3.18)
   pry
-
-BUNDLED WITH
-   1.10.2

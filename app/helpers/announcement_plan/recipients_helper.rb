@@ -1,4 +1,4 @@
 module AnnouncementPlan
-  module ReadersHelper
+  module RecipientsHelper
   end
 end

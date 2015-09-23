@@ -1,10 +1,10 @@
-<%= form_for(@reader) do |f| %>
-  <% if @reader.errors.any? %>
+<%= form_for(@addressee) do |f| %>
+  <% if @addressee.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@reader.errors.count, "error") %> prohibited this reader from being saved:</h2>
+      <h2><%= pluralize(@addressee.errors.count, "error") %> prohibited this addressee from being saved:</h2>
 
       <ul>
-      <% @reader.errors.full_messages.each do |message| %>
+      <% @addressee.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

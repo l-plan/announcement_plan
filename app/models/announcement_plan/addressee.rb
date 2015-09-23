@@ -1,14 +1,14 @@
 module AnnouncementPlan
-  class Reader < ActiveRecord::Base
+  class Addressee < ActiveRecord::Base
   	belongs_to :announcement
 
 
-  	scope :user, -> (user) { where(user_id: user.id)}
+
+	# scope :users, ()
+
 
   	def user
   		::User.find user_id
   	end
   end
-
-
 end

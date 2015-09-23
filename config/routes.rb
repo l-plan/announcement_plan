@@ -4,9 +4,9 @@ AnnouncementPlan::Engine.routes.draw do
 
   resources :announcements 
   resources :tenants
-  resources :users
+  resources :addressees
   resources :roles
-  resources :readers
+  resources :recipients
 
   root :to => "announcements#index"
 end

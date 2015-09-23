@@ -13,13 +13,13 @@ module AnnouncementPlan
 
     test "the truth" do
       # assert @announcement.users.size = 4
-      assert_equal 1, @announcement.users.size
+      assert_equal 1, @announcement.addressees.size
 
     end
 
     test "the truth again" do
       # assert @announcement.users.size = 4
-      assert_equal 1, @announcement.class.user(@user).size
+      assert_equal 1, @announcement.class.addressee(@user).size
 
     end
 

@@ -13,6 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20150916095508) do
 
+  create_table "announcement_plan_addressees", force: :cascade do |t|
+    t.integer  "announcement_id", limit: 4
+    t.integer  "user_id",         limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "announcement_plan_addressees", ["announcement_id"], name: "index_announcement_plan_addressees_on_announcement_id", using: :btree
+  add_index "announcement_plan_addressees", ["user_id"], name: "index_announcement_plan_addressees_on_user_id", using: :btree
+
   create_table "announcement_plan_announcements", force: :cascade do |t|
     t.string   "title",               limit: 255
     t.text     "tekst",               limit: 65535
@@ -36,15 +46,15 @@ ActiveRecord::Schema.define(version: 20150916095508) do
 
   add_index "announcement_plan_categories", ["name"], name: "index_announcement_plan_categories_on_name", using: :btree
 
-  create_table "announcement_plan_readers", force: :cascade do |t|
+  create_table "announcement_plan_recipients", force: :cascade do |t|
     t.integer  "announcement_id", limit: 4
     t.integer  "user_id",         limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
 
-  add_index "announcement_plan_readers", ["announcement_id"], name: "index_announcement_plan_readers_on_announcement_id", using: :btree
-  add_index "announcement_plan_readers", ["user_id"], name: "index_announcement_plan_readers_on_user_id", using: :btree
+  add_index "announcement_plan_recipients", ["announcement_id"], name: "index_announcement_plan_recipients_on_announcement_id", using: :btree
+  add_index "announcement_plan_recipients", ["user_id"], name: "index_announcement_plan_recipients_on_user_id", using: :btree
 
   create_table "announcement_plan_roles", force: :cascade do |t|
     t.integer  "announcement_id", limit: 4
@@ -65,16 +75,6 @@ ActiveRecord::Schema.define(version: 20150916095508) do
 
   add_index "announcement_plan_tenants", ["announcement_id"], name: "index_announcement_plan_tenants_on_announcement_id", using: :btree
   add_index "announcement_plan_tenants", ["tenant_id"], name: "index_announcement_plan_tenants_on_tenant_id", using: :btree
-
-  create_table "announcement_plan_users", force: :cascade do |t|
-    t.integer  "announcement_id", limit: 4
-    t.integer  "user_id",         limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  add_index "announcement_plan_users", ["announcement_id"], name: "index_announcement_plan_users_on_announcement_id", using: :btree
-  add_index "announcement_plan_users", ["user_id"], name: "index_announcement_plan_users_on_user_id", using: :btree
 
   create_table "cars", force: :cascade do |t|
     t.string   "color",      limit: 255

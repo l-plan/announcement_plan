@@ -1,4 +1,4 @@
 module AnnouncementPlan
-  module UsersHelper
+  module AddresseesHelper
   end
 end
