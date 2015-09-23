@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<%= AnnouncementPlan::Announcement.addressee(current_user).map(&:title) %>
+<%= AnnouncementPlan::Announcement.for_user(current_user).map(&:title) %> 
 <%= yield %>
 
 </body>

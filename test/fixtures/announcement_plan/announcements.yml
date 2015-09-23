@@ -15,3 +15,51 @@ announcement_2:
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 2
   id: 2
+
+announcement_3:
+  title: titel3
+  tekst: MyText3
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 1
+  id: 3
+
+announcement_4:
+  title: titel4
+  tekst: MyText4
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 2
+  id: 4
+
+announcement_5:
+  title: titel5
+  tekst: MyText5
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 1
+  id: 5
+
+announcement_6:
+  title: titel6
+  tekst: MyText6
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 2
+  id: 6
+
+announcement_7:
+  title: titel7
+  tekst: MyText7
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 1
+  id: 7
+
+announcement_8:
+  title: titel8
+  tekst: MyText8
+  start_announcing_at: 2015-09-16 11:14:46
+  stop_announcing_at: 2015-10-16 11:14:46
+  category_id: 2
+  id: 8
