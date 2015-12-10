@@ -10,7 +10,11 @@ module AnnouncementPlan
   	setup do
       @announcement = announcement_plan_announcements(:announcement_1)
       @user = ::User.first
-       # stub goes away once the block is done
+        AnnouncementPlan.configure do |config|
+          config.role_ref = "naam"
+          config.with_tenant = true
+          config.with_role = true
+        end
 
     end
 
@@ -27,6 +31,14 @@ module AnnouncementPlan
         Announcement.current( Time.new(2015,9,17) ).size.must_equal 8
       end
 
+    end
+
+    test "amount announcements which are read" do
+     Announcement.read(@user).size.must_equal 1
+    end
+
+    test "amount announcements which are not read" do
+     Announcement.unread(@user).size.must_equal 7
     end
 
     test "amount of addressees for announcement #1" do
@@ -49,7 +61,7 @@ module AnnouncementPlan
 
     test "amount of announcements for user #1 as an user within a tenant, as an user or wiht his role" do
       #user 1 is in tenant #1 there are 2 announcements for users of this tenant
-      @announcement.class.for_user(@user, nil).size.must_equal 5
+      @announcement.class.for_user(@user, nil).size.must_equal 3
     end
 
   end

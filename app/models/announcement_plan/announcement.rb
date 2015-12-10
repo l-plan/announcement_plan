@@ -41,8 +41,9 @@ module AnnouncementPlan
       rel += as_tenant(user).map(&:id) if AnnouncementPlan.configuration.with_tenant
       rel += as_role(user).map(&:id) if AnnouncementPlan.configuration.with_role
       rel += as_addressee(user).map(&:id)
-      rel = rel.uniq
-      rel -= read(user)
+      rel = (rel.uniq)
+ 
+      rel -= read(user).map(&:id) 
 
       where(id: rel).current(time)
 

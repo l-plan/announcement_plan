@@ -10,4 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require_tree .
+//= require announcement_plan/application
+//= require foundation
+//= require foundation_datepicker_rails
+$(function(){ $(document).foundation(); });

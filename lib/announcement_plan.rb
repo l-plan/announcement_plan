@@ -1,15 +1,12 @@
 require "announcement_plan/engine"
 require 'announcement_plan/configuration'
+require 'jquery-rails'
+require 'jquery-ui-rails'
+require 'jquery-minicolors-rails'
+require "default_value_for"
+
 
 module AnnouncementPlan
-
-		# extend Configuration
-
-		# define_setting :with_tenant, true
-		# define_setting :with_role, true
-		# define_setting :sport
-		# define_setting :mac
-
 
 end
 

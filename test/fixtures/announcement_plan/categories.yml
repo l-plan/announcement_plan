@@ -3,11 +3,14 @@
 category_1:
   name: maintenance
   id: 1
+  color: green
 
 category_2::
   name: 'update application'
   id: 2
+  color: red
 
 category_3::
   name: 'update tax rules'
   id: 3
+  color: pink

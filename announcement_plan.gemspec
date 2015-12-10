@@ -18,9 +18,18 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4"
-  s.add_dependency "apartment", "~> 1"
-  s.add_dependency "devise", "~> 3"
+  s.add_dependency "default_value_for", "~> 3.0.0"
+  s.add_dependency 'foundation-rails', '>= 5'
+
+  # s.add_dependency "apartment", "~> 1"
+  # s.add_dependency "devise", "~> 3"
 
   s.add_development_dependency "mysql2", "0.3.18"
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'jquery-rails'
+  s.add_development_dependency 'jquery-ui-rails'
+  s.add_development_dependency 'jquery-minicolors-rails'
+  s.add_development_dependency 'coffee-rails', '~> 4.0.0'
+
+
 end

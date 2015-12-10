@@ -15,7 +15,7 @@ module AnnouncementPlan
 
     # GET /categories/new
     def new
-      @category = Category.new
+      @category = Category.new#(color: '#ffff88')
     end
 
     # GET /categories/1/edit
@@ -56,7 +56,7 @@ module AnnouncementPlan
 
       # Only allow a trusted parameter "white list" through.
       def category_params
-        params.require(:category).permit(:name)
+        params.require(:category).permit(:name, :color)
       end
   end
 end

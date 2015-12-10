@@ -43,9 +43,11 @@ then migrate your database
 
 
 what gets included
+css
+ *= require announcement_plan/application
 
-
-
+ js
+//= require announcement_plan/application
 
 
 
@@ -59,8 +61,26 @@ what gets included
 
 you can override the gems defaults by creating an initializer-file in your apps initializers directory. 
 
+default configuration is:
+
+_config/initializers/announcement_plan.rb_
+
+```ruby
+	AnnouncementPlan.configure do |config|
+  		config.role_ref = "naam"
+  		config.with_tenant = true
+  		config.with_role = true
+	end
+```
+
 ### testing
 
 testing a single file:
 
 	$ rake TEST='test/controllers/announcement_plan/announcements_controller_test.rb'
+
+
+
+### todo
+
+refactor scope Announcement.unread(user)

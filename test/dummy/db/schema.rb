@@ -40,8 +40,9 @@ ActiveRecord::Schema.define(version: 20150916095508) do
 
   create_table "announcement_plan_categories", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.text     "color",      limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "announcement_plan_categories", ["name"], name: "index_announcement_plan_categories_on_name", using: :btree

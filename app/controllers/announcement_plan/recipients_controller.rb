@@ -2,7 +2,8 @@ require_dependency "announcement_plan/application_controller"
 
 module AnnouncementPlan
   class RecipientsController < ApplicationController
-    before_action :set_recipient, only: [:show, :edit, :update, :destroy]
+    before_action :set_recipient, only: [:show, :edit, :update, :destroy] 
+
 
     # GET /recipients
     def index
@@ -15,6 +16,11 @@ module AnnouncementPlan
 
     # GET /recipients/new
     def new
+
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.js { render json: @timer }
+    # end
       @recipient = Recipient.new
     end
 
@@ -26,11 +32,29 @@ module AnnouncementPlan
     def create
       @recipient = Recipient.new(recipient_params)
 
+      # if @recipient.save
+      #   redirect_to @recipient, notice: 'Recipient was successfully created.'
+      # else
+      #   render :new
+      # end
+
+
+    respond_to do |format|
       if @recipient.save
-        redirect_to @recipient, notice: 'Recipient was successfully created.'
+
+
+          format.html {redirect_to @recipient, notice: 'Recipient was successfully created.'}
+          format.js {}
+
       else
-        render :new
+        format.html { render action: 'new' }
+        
+        format.js
       end
+    end
+
+
+
     end
 
     # PATCH/PUT /recipients/1

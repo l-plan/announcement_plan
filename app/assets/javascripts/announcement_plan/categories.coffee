@@ -1,0 +1,2 @@
+jQuery ->
+  $('.minicolors-input').minicolors()
