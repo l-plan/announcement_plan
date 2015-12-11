@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :users
   resources :cars
   mount AnnouncementPlan::Engine => "/announcement_plan"
+
+  root to: "users#index"
 end

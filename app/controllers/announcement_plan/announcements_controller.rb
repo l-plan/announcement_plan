@@ -7,6 +7,12 @@ module AnnouncementPlan
     # GET /announcements
     def index
       @announcements = Announcement.all
+
+
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render :json=> Announcement.for_user(current_user), root: false }
+      end
     end
 
     # GET /announcements/1

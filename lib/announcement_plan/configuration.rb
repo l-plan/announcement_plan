@@ -20,6 +20,7 @@ module AnnouncementPlan
       @with_tenant = true
       @with_role   = true
       @sport       = "voetbal"
+      # @current_user = 
      
       # @class_name = "emoji".freeze
       # @img_attrs  = {}

@@ -35,8 +35,8 @@ module AnnouncementPlan
 
   
 
-    def self.for_user(user,time)
-      time =Time.now
+    def self.for_user(user,time=nil)
+      time ||=Time.now
       rel = []
       rel += as_tenant(user).map(&:id) if AnnouncementPlan.configuration.with_tenant
       rel += as_role(user).map(&:id) if AnnouncementPlan.configuration.with_role
