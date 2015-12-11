@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.minicolors
+//= require foundation_datepicker_rails
 //= require_tree .

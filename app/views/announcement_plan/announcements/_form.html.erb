@@ -1,5 +1,7 @@
+
 <%= form_for(@announcement) do |f| %>
   <% if @announcement.errors.any? %>
+  <div class='row'>
     <div id="error_explanation">
       <h2><%= pluralize(@announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
 
@@ -9,31 +11,48 @@
       <% end %>
       </ul>
     </div>
+  </div>
   <% end %>
 
 
-
-  <div class="field">
-    <%= f.label :title %><br>
+<div class='row'>
+  <div class='large-4 columns'>
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :tekst %><br>
-    <%= f.text_area :tekst %>
+</div>
+
+<div class='row'>
+  <div class='large-12 columns'>
+    <%= f.label :tekst %>
+    <%= f.text_area :tekst , class: 'formTextArea' %>
   </div>
-  <div class="field">
-    <%= f.label :start_announcing_at %><br>
-    <%= f.text_field :start_announcing_at %>
+</div>
+  
+<div class='row'>
+  <div class='large-4 columns'>
+    <%= f.label :start_announcing_at %>
+    <%= f.text_field :start_announcing_at, class: 'mijnDatumInput' %>
   </div>
-  <div class="field">
-    <%= f.label :stop_announcing_at %><br>
-    <%= f.text_field :stop_announcing_at %>
+  <div class='large-4 columns end'>
+    <%= f.label :stop_announcing_at %>
+    <%= f.text_field :stop_announcing_at, class: 'mijnDatumInput' %>
   </div>
-  <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+</div>
+
+<div class='row'>
+  <div class='large-4 columns'>
+    <%= f.label :category_id %>
+    <%= f.collection_select :category_id , AnnouncementPlan::Category.all, :id, :name%>
   </div>
-  <div class="actions">
+</div>
+
+<div class='row actions'>
+  <div class='large-4 columns'>
     <%= f.submit %>
   </div>
+</div>
+
+
+
 <% end %>

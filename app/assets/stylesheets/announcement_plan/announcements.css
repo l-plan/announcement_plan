@@ -48,3 +48,7 @@ position: absolute;
 .red{
 /*  background: red;*/
 }
+
+.formTextArea {
+  height: 15em;
+}
