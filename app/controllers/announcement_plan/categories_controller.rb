@@ -2,20 +2,24 @@ require_dependency "announcement_plan/application_controller"
 
 module AnnouncementPlan
   class CategoriesController < ApplicationController
-    before_action :set_category, only: [:show, :edit, :update, :destroy]
+    before_action :set_category, only: [ :edit, :update, :destroy]
 
     # GET /categories
     def index
       @categories = Category.all
+
+      respond_to do |format|
+        format.html # index.html.erb
+        # format.json { render :json=> Announcement.for_user(current_user), root: false }
+        format.json { render :json=> @categories, root: false }
+
+      end
     end
 
-    # GET /categories/1
-    def show
-    end
 
     # GET /categories/new
     def new
-      @category = Category.new#(color: '#ffff88')
+      @category = Category.new
     end
 
     # GET /categories/1/edit
@@ -27,7 +31,7 @@ module AnnouncementPlan
       @category = Category.new(category_params)
 
       if @category.save
-        redirect_to @category, notice: 'Category was successfully created.'
+        redirect_to root_path, notice: 'Category was successfully created.'
       else
         render :new
       end
@@ -36,7 +40,7 @@ module AnnouncementPlan
     # PATCH/PUT /categories/1
     def update
       if @category.update(category_params)
-        redirect_to @category, notice: 'Category was successfully updated.'
+        redirect_to root_path, notice: 'Category was successfully updated.'
       else
         render :edit
       end

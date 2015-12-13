@@ -11,7 +11,7 @@ module AnnouncementPlan
       @announcement = announcement_plan_announcements(:announcement_1)
       @user = ::User.first
         AnnouncementPlan.configure do |config|
-          config.role_ref = "naam"
+          # config.role_omschr = ["naam"]
           config.with_tenant = true
           config.with_role = true
         end
@@ -61,7 +61,9 @@ module AnnouncementPlan
 
     test "amount of announcements for user #1 as an user within a tenant, as an user or wiht his role" do
       #user 1 is in tenant #1 there are 2 announcements for users of this tenant
-      @announcement.class.for_user(@user, nil).size.must_equal 3
+  
+      @announcement.class.for_user(@user, Date.new(2015,9,20)).size.must_equal 3
+  
     end
 
   end

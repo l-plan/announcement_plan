@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 4"
   s.add_dependency "default_value_for", "~> 3.0.0"
   s.add_dependency 'foundation-rails', '>= 5'
+  s.add_dependency 'active_model_serializers', '0.9.3'
 
   # s.add_dependency "apartment", "~> 1"
   # s.add_dependency "devise", "~> 3"

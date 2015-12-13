@@ -23,13 +23,9 @@ module AnnouncementPlan
         post :create, category: { name: @category.name }
       end
 
-      assert_redirected_to category_path(assigns(:category))
+      assert_redirected_to root_path
     end
 
-    test "should show category" do
-      get :show, id: @category
-      assert_response :success
-    end
 
     test "should get edit" do
       get :edit, id: @category
@@ -38,7 +34,7 @@ module AnnouncementPlan
 
     test "should update category" do
       patch :update, id: @category, category: { name: @category.name }
-      assert_redirected_to category_path(assigns(:category))
+      assert_redirected_to root_path
     end
 
     test "should destroy category" do

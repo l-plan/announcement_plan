@@ -16,6 +16,8 @@
 
     <%=AnnouncementPlan::Announcement.for_user(current_user, Time.now).size%>
 
+    <div id='announcements'></div>
+
     <%= yield %>
 
   </body>

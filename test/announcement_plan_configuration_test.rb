@@ -10,25 +10,18 @@ class AnnouncementPlanConfigurationTest <  ActiveSupport::TestCase
     assert_equal true, AnnouncementPlan.configuration.with_tenant
   end
 
-  def test_set_configuration_another_value
-    AnnouncementPlan.configure do |config|
-      config.sport = "wielrennen"
-    end
-
-    assert_equal "wielrennen", AnnouncementPlan.configuration.sport
-  end
 
   def test_configuration_no_value_no_default
 
-    assert_equal nil, AnnouncementPlan.configuration.role_ref
+    assert_equal ["superuser", "admin", "gebruiker", "gast", "medewerker", "manager", "accountant"], AnnouncementPlan.configuration.role_omschr
   end
 
   def test_configuration_set_value_no_default
     AnnouncementPlan.configure do |config|
-      config.role_ref = "naam"
+      config.role_omschr = ["admin", "gebruiker"]
     end
 
-    assert_equal "naam", AnnouncementPlan.configuration.role_ref
+    assert_equal ["admin", "gebruiker"] , AnnouncementPlan.configuration.role_omschr
   end
 
 end

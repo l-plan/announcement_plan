@@ -67,7 +67,7 @@ _config/initializers/announcement_plan.rb_
 
 ```ruby
 	AnnouncementPlan.configure do |config|
-  		config.role_ref = "naam"
+  		config.role_omschr = ["superuser", "admin", "gebruiker", "gast", "medewerker", "manager", "accountant"]
   		config.with_tenant = true
   		config.with_role = true
 	end

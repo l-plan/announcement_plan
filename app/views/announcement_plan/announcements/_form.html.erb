@@ -14,38 +14,119 @@
   </div>
   <% end %>
 
+<div class='row'>
+  <div class='large-9 columns'>
+    <div class='row'>
+      <div class='large-12 columns'>
 
-<div class='row'>
-  <div class='large-4 columns'>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+        <%if  @announcement.new_record?%> 
+         <h2>new announcement</h2>
+         <%else%>
+         <h2>edit announcement</h2>
+         <%end%>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='large-4 columns'>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+    </div>
+
+    <div class='row'>
+      <div class='large-12 columns'>
+        <%= f.label :tekst %>
+        <%= f.text_area :tekst , class: 'formTextArea' %>
+      </div>
+    </div>
+      
+    <div class='row'>
+      <div class='large-3 columns'>
+        <%= f.label :start_announcing_at %>
+        <%= f.text_field :start_announcing_at, class: 'mijnDatumInput' %>
+      </div>
+
+      <div class='large-3 columns end'>
+        <%= f.label :stop_announcing_at %>
+        <%= f.text_field :stop_announcing_at, class: 'mijnDatumInput' %>
+      </div>
+
+      <div class='large-6 columns'>
+        <%= f.label :category_id %>
+        <%= f.collection_select :category_id , AnnouncementPlan::Category.all, :id, :name%>
+      </div>
+    </div>
   </div>
+
+  <div class='large-3 columns'>
+
+  <div class = 'select_target'>
+
+    <div class = 'row'>
+      <div class = 'large-12 columns toggleTarget'>
+        kies administratie
+      </div>
+    </div>
+
+    <div class = 'targets'>
+        <% Tenant.all.each do |t| %>
+          <div class = 'row'> 
+            <div class = 'large-3 columns'>  <%= check_box_tag :root_tenant_ids, t.id, @announcement.root_tenant_ids.include?(t.id), :name => 'announcement[root_tenant_ids][]' %>  </div>
+            <div class = 'large-9 columns'> <%= t.administration %>  </div>
+          </div>
+
+        <% end %>
+    </div>
+
+  </div>
+
+
+
+  <div class = 'select_target'>
+    <div class = 'row'>
+      <div class = 'large-12 columns toggleTarget'>
+        kies rol
+      </div>
+    </div>
+
+    <div class = 'targets'>
+        <% AnnouncementPlan.configuration.role_omschr.each do |role| %>
+          <div class = 'row'> 
+            <div class = 'large-3 columns'>  <%= check_box_tag :root_role_namen, role, @announcement.root_role_namen.include?(role), :name => 'announcement[root_role_namen][]' %>  </div>
+            <div class = 'large-9 columns'> <%= role %>  </div>
+          </div>
+
+        <% end %>
+    </div>
+
+  </div>
+
+  <div class = 'select_target'>
+    
+    <div class = 'row'>
+      <div class = 'large-12 columns toggleTarget'>
+        kies gebruiker
+      </div>
+    </div> 
+
+    <div class = 'targets'>
+        <% User.all.each do |user| %>
+          <div class = 'row'> 
+            <div class = 'large-3 columns'>  <%= check_box_tag :root_user_ids, user.id, @announcement.root_user_ids.include?(user.id), :name => 'announcement[root_user_ids][]' %>  </div>
+            <div class = 'large-9 columns'> <%= user.name %>  </div>
+          </div>
+
+        <% end %>
+    </div>
+
+  </div>
+
 </div>
 
-<div class='row'>
-  <div class='large-12 columns'>
-    <%= f.label :tekst %>
-    <%= f.text_area :tekst , class: 'formTextArea' %>
-  </div>
-</div>
-  
-<div class='row'>
-  <div class='large-4 columns'>
-    <%= f.label :start_announcing_at %>
-    <%= f.text_field :start_announcing_at, class: 'mijnDatumInput' %>
-  </div>
-  <div class='large-4 columns end'>
-    <%= f.label :stop_announcing_at %>
-    <%= f.text_field :stop_announcing_at, class: 'mijnDatumInput' %>
-  </div>
 </div>
 
-<div class='row'>
-  <div class='large-4 columns'>
-    <%= f.label :category_id %>
-    <%= f.collection_select :category_id , AnnouncementPlan::Category.all, :id, :name%>
-  </div>
-</div>
+
 
 <div class='row actions'>
   <div class='large-4 columns'>

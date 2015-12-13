@@ -1,7 +1,5 @@
 module AnnouncementPlan
-  class ApplicationController < ::ApplicationController #ActionController::Base
-  	# def current_user
+  class ApplicationController < ::ApplicationController
 
-  	# end
   end
 end

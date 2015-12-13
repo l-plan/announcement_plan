@@ -6,12 +6,14 @@ module AnnouncementPlan
 
     # GET /announcements
     def index
-      @announcements = Announcement.all
+      @announcements = Announcement.for_user(current_user)
 
 
       respond_to do |format|
         format.html # index.html.erb
-        format.json { render :json=> Announcement.for_user(current_user), root: false }
+        # format.json { render :json=> Announcement.for_user(current_user), root: false }
+        format.json { render :json=> @announcements, root: false}
+
       end
     end
 
@@ -30,6 +32,7 @@ module AnnouncementPlan
 
     # POST /announcements
     def create
+       params[:announcement] = {root_tenant_ids: [],root_role_namen: [],root_user_ids: [] }.merge!(params[:announcement])
       @announcement = Announcement.new(announcement_params)
 
       if @announcement.save
@@ -41,7 +44,11 @@ module AnnouncementPlan
 
     # PATCH/PUT /announcements/1
     def update
+
+      params[:announcement] = {root_tenant_ids: [],root_role_namen: [],root_user_ids: []}.merge!(params[:announcement])
+      # @announcement.attributes = {'group_ids' => []}.merge(params[:user] || {})
       if @announcement.update(announcement_params)
+
         redirect_to @announcement, notice: 'Announcement was successfully updated.'
       else
         render :edit
@@ -62,7 +69,9 @@ module AnnouncementPlan
 
       # Only allow a trusted parameter "white list" through.
       def announcement_params
-        params.require(:announcement).permit(:title, :tekst, :start_announcing_at, :stop_announcing_at, :category_id)
+        params.require(:announcement).permit(:title, :tekst, :start_announcing_at, :stop_announcing_at, :category_id, :root_tenant_ids=>[],
+         :root_role_namen=>[], :root_user_ids=>[])
+      
       end
   end
 end
