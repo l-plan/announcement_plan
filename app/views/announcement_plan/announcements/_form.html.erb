@@ -72,7 +72,7 @@
     <div class = 'targets'>
         <% Tenant.all.each do |t| %>
           <div class = 'row'> 
-            <div class = 'large-3 columns'>  <%= check_box_tag :root_tenant_ids, t.id, @announcement.root_tenant_ids.include?(t.id), :name => 'announcement[root_tenant_ids][]' %>  </div>
+            <div class = 'large-3 columns'>  <%= check_box_tag :tenant_ids, t.id, @announcement.tenant_ids.include?(t.id), :name => 'announcement[tenant_ids][]' %>  </div>
             <div class = 'large-9 columns'> <%= t.administration %>  </div>
           </div>
 
@@ -91,10 +91,10 @@
     </div>
 
     <div class = 'targets'>
-        <% AnnouncementPlan.configuration.role_omschr.each do |role| %>
+        <% RoleSource.all.each do |r| %>
           <div class = 'row'> 
-            <div class = 'large-3 columns'>  <%= check_box_tag :root_role_namen, role, @announcement.root_role_namen.include?(role), :name => 'announcement[root_role_namen][]' %>  </div>
-            <div class = 'large-9 columns'> <%= role %>  </div>
+            <div class = 'large-3 columns'>  <%= check_box_tag :role_source_ids, r.id, @announcement.role_source_ids.include?(r.id), :name => 'announcement[role_source_ids][]' %>  </div>
+            <div class = 'large-9 columns'> <%= r.naam %>  </div>
           </div>
 
         <% end %>
@@ -113,7 +113,7 @@
     <div class = 'targets'>
         <% User.all.each do |user| %>
           <div class = 'row'> 
-            <div class = 'large-3 columns'>  <%= check_box_tag :root_user_ids, user.id, @announcement.root_user_ids.include?(user.id), :name => 'announcement[root_user_ids][]' %>  </div>
+            <div class = 'large-3 columns'>  <%= check_box_tag :user_ids, user.id, @announcement.user_ids.include?(user.id), :name => 'announcement[user_ids][]' %>  </div>
             <div class = 'large-9 columns'> <%= user.name %>  </div>
           </div>
 

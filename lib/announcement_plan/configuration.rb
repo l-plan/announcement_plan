@@ -14,16 +14,11 @@ module AnnouncementPlan
   end
 
   class Configuration
-    attr_accessor :with_tenant, :with_role, :role_omschr
+    attr_accessor :with_tenant, :with_role
 
     def initialize
       @with_tenant = true
       @with_role   = true
-      @role_omschr    = ["superuser", "admin", "gebruiker", "gast", "medewerker", "manager", "accountant"]
-      # @current_user = 
-     
-      # @class_name = "emoji".freeze
-      # @img_attrs  = {}
     end
   end
 end

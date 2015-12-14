@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+role_source_1:
+  naam: manager
+  id: 1
+
+role_source_2:
+  naam: admin
+  id: 2
+
+role_source_3:
+  naam: employee
+  id: 3
+
+role_source_4:
+  naam: guest
+  id: 4
+
+role_source_5:
+  naam: superuser
+  id: 5

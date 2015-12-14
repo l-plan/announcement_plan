@@ -32,7 +32,7 @@ module AnnouncementPlan
 
     # POST /announcements
     def create
-       params[:announcement] = {root_tenant_ids: [],root_role_namen: [],root_user_ids: [] }.merge!(params[:announcement])
+      params[:announcement] = {tenant_ids: [],role_source_ids: [],user_ids: []}.merge!(params[:announcement])
       @announcement = Announcement.new(announcement_params)
 
       if @announcement.save
@@ -45,8 +45,7 @@ module AnnouncementPlan
     # PATCH/PUT /announcements/1
     def update
 
-      params[:announcement] = {root_tenant_ids: [],root_role_namen: [],root_user_ids: []}.merge!(params[:announcement])
-      # @announcement.attributes = {'group_ids' => []}.merge(params[:user] || {})
+      params[:announcement] = {tenant_ids: [],role_source_ids: [],user_ids: []}.merge!(params[:announcement])
       if @announcement.update(announcement_params)
 
         redirect_to @announcement, notice: 'Announcement was successfully updated.'
@@ -69,8 +68,8 @@ module AnnouncementPlan
 
       # Only allow a trusted parameter "white list" through.
       def announcement_params
-        params.require(:announcement).permit(:title, :tekst, :start_announcing_at, :stop_announcing_at, :category_id, :root_tenant_ids=>[],
-         :root_role_namen=>[], :root_user_ids=>[])
+        params.require(:announcement).permit(:title, :tekst, :start_announcing_at, :stop_announcing_at, :category_id, :tenant_ids=>[],
+         :role_source_ids=>[], :user_ids=>[])
       
       end
   end

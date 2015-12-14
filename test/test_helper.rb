@@ -6,6 +6,9 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db
 # ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', __FILE__)
 require "rails/test_help"
 require "minitest/spec"
+require "minitest/rails"
+require 'minitest/autorun'
+require 'color_pound_spec_reporter'
 
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
@@ -29,3 +32,5 @@ class ActiveSupport::TestCase
 	  extend MiniTest::Spec::DSL
 # ActiveSupport::TestCase.fixtures :all
 end
+
+Minitest::Reporters.use! Minitest::Reporters::ProgressReporter.new

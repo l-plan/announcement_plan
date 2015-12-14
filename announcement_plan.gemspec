@@ -26,11 +26,16 @@ Gem::Specification.new do |s|
   # s.add_dependency "devise", "~> 3"
 
   s.add_development_dependency "mysql2", "0.3.18"
-  s.add_development_dependency 'pry'
+  s.add_development_dependency "pry-rails", "~>0.3.4"
   s.add_development_dependency 'jquery-rails'
   s.add_development_dependency 'jquery-ui-rails'
   s.add_development_dependency 'jquery-minicolors-rails'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
+  s.add_development_dependency 'minitest-rails', "~>2.2.0"
+  s.add_development_dependency 'minitest-spec-rails', "~>5.2.2"
+  s.add_development_dependency "minitest-reporters", "~>1.0.19"
+  s.add_development_dependency 'color_pound_spec_reporter' , "~>0.0.3"
+
 
 
 end
