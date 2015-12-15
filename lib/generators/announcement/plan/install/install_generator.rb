@@ -36,7 +36,7 @@ module Announcement
             copy_file "20151213223928_create_announcement_plan_announcements_tenants.rb", "db/migrate/#{Time.now.strftime("%Y%m%d%H%M"+"05")}_create_announcement_plan_announcements_tenants.rb"
          end
 
-         def create_announcement_plan_role_sources
+         def create_announcement_plan_announcements_role_sources
             say_status("creating role_sources", nil, :green)
 
             copy_file "20151213223938_create_announcement_plan_announcements_role_sources.rb", "db/migrate/#{Time.now.strftime("%Y%m%d%H%M"+"06")}_create_announcement_plan_role_sources.rb"
