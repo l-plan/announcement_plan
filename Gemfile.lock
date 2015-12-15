@@ -8,10 +8,11 @@ GIT
 PATH
   remote: .
   specs:
-    announcement_plan (0.0.2)
+    announcement_plan (0.0.3)
       active_model_serializers (= 0.9.3)
       default_value_for (~> 3.0.0)
       foundation-rails (>= 5)
+      jquery-minicolors-rails
       rails (~> 4)
 
 GEM
@@ -164,7 +165,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   color_pound_spec_reporter (~> 0.0.3)
   foundation_datepicker_rails!
-  jquery-minicolors-rails
   jquery-rails
   jquery-ui-rails
   minitest-rails (~> 2.2.0)

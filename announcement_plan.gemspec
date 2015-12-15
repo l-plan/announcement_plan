@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "default_value_for", "~> 3.0.0"
   s.add_dependency 'foundation-rails', '>= 5'
   s.add_dependency 'active_model_serializers', '0.9.3'
+  s.add_dependency 'jquery-minicolors-rails'
 
   # s.add_dependency "apartment", "~> 1"
   # s.add_dependency "devise", "~> 3"
@@ -29,7 +30,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-rails", "~>0.3.4"
   s.add_development_dependency 'jquery-rails'
   s.add_development_dependency 'jquery-ui-rails'
-  s.add_development_dependency 'jquery-minicolors-rails'
   s.add_development_dependency 'coffee-rails', '~> 4.0.0'
   s.add_development_dependency 'minitest-rails', "~>2.2.0"
   s.add_development_dependency 'minitest-spec-rails', "~>5.2.2"
