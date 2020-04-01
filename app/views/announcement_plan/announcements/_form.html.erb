@@ -1,7 +1,7 @@
 
 <%= form_for(@announcement) do |f| %>
   <% if @announcement.errors.any? %>
-  <div class='row'>
+  <div class='grid-x'>
     <div id="error_explanation">
       <h2><%= pluralize(@announcement.errors.count, "error") %> prohibited this announcement from being saved:</h2>
 
@@ -14,10 +14,10 @@
   </div>
   <% end %>
 
-<div class='row'>
-  <div class='large-9 columns'>
-    <div class='row'>
-      <div class='large-12 columns'>
+<div class='grid-x'>
+  <div class='large-9 cell'>
+    <div class='grid-x'>
+      <div class='large-12 cell'>
 
         <%if  @announcement.new_record?%> 
          <h2>new announcement</h2>
@@ -27,56 +27,56 @@
       </div>
     </div>
 
-    <div class='row'>
-      <div class='large-4 columns'>
+    <div class='grid-x'>
+      <div class='large-4 cell'>
         <%= f.label :title %>
         <%= f.text_field :title %>
       </div>
     </div>
 
-    <div class='row'>
-      <div class='large-12 columns'>
-        <%= f.label :tekst %>
-        <%= f.text_area :tekst , class: 'formTextArea' %>
+    <div class='grid-x'>
+      <div class='large-12 cell'>
+        <%= f.label :txt %>
+        <%= f.text_area :txt , class: 'formTextArea' %>
       </div>
     </div>
       
-    <div class='row'>
-      <div class='large-3 columns'>
+    <div class='grid-x'>
+      <div class='large-3 cell'>
         <%= f.label :start_announcing_at %>
-        <%= f.text_field :start_announcing_at, class: 'mijnDatumInput' %>
+        <%= f.text_field :start_announcing_at, class: 'myDate' %>
       </div>
 
-      <div class='large-3 columns end'>
+      <div class='large-3 cell end'>
         <%= f.label :stop_announcing_at %>
-        <%= f.text_field :stop_announcing_at, class: 'mijnDatumInput' %>
+        <%= f.text_field :stop_announcing_at, class: 'myDate' %>
       </div>
 
-      <div class='large-6 columns'>
+      <div class='large-6 cell'>
         <%= f.label :category_id %>
         <%= f.collection_select :category_id , AnnouncementPlan::Category.all, :id, :name%>
       </div>
     </div>
   </div>
 
-  <div class='large-3 columns'>
+  <div class='large-3 cell'>
 
   <div class = 'select_target'>
 
-    <div class = 'row'>
-      <div class = 'large-12 columns toggleTarget'>
+    <div class = 'grid-x'>
+      <div class = 'large-12 cell toggleTarget'>
         kies administratie
       </div>
     </div>
 
     <div class = 'targets'>
-        <% Tenant.all.each do |t| %>
-          <div class = 'row'> 
-            <div class = 'large-3 columns'>  <%= check_box_tag :tenant_ids, t.id, @announcement.tenant_ids.include?(t.id), :name => 'announcement[tenant_ids][]' %>  </div>
-            <div class = 'large-9 columns'> <%= t.administration %>  </div>
+        <%# Tenant.all.each do |t| %>
+          <div class = 'grid-x'> 
+            <div class = 'large-3 cell'>  <%#= check_box_tag :tenant_ids, t.id, @announcement.tenant_ids.include?(t.id), :name => 'announcement[tenant_ids][]' %>  </div>
+            <div class = 'large-9 cell'> <%#= t.administration %>  </div>
           </div>
 
-        <% end %>
+        <%# end %>
     </div>
 
   </div>
@@ -84,40 +84,40 @@
 
 
   <div class = 'select_target'>
-    <div class = 'row'>
-      <div class = 'large-12 columns toggleTarget'>
+    <div class = 'grid-x'>
+      <div class = 'large-12 cell toggleTarget'>
         kies rol
       </div>
     </div>
 
     <div class = 'targets'>
-        <% RoleSource.all.each do |r| %>
-          <div class = 'row'> 
-            <div class = 'large-3 columns'>  <%= check_box_tag :role_source_ids, r.id, @announcement.role_source_ids.include?(r.id), :name => 'announcement[role_source_ids][]' %>  </div>
-            <div class = 'large-9 columns'> <%= r.naam %>  </div>
+        <%# RoleSource.all.each do |r| %>
+          <div class = 'grid-x'> 
+            <div class = 'large-3 cell'>  <%#= check_box_tag :role_source_ids, r.id, @announcement.role_source_ids.include?(r.id), :name => 'announcement[role_source_ids][]' %>  </div>
+            <div class = 'large-9 cell'> <%#= r.naam %>  </div>
           </div>
 
-        <% end %>
+        <%# end %>
     </div>
 
   </div>
 
   <div class = 'select_target'>
     
-    <div class = 'row'>
-      <div class = 'large-12 columns toggleTarget'>
+    <div class = 'grid-x'>
+      <div class = 'large-12 cell toggleTarget'>
         kies gebruiker
       </div>
     </div> 
 
     <div class = 'targets'>
-        <% User.all.each do |user| %>
-          <div class = 'row'> 
-            <div class = 'large-3 columns'>  <%= check_box_tag :user_ids, user.id, @announcement.user_ids.include?(user.id), :name => 'announcement[user_ids][]' %>  </div>
-            <div class = 'large-9 columns'> <%= user.name %>  </div>
+        <%# User.all.each do |user| %>
+          <div class = 'grid-x'> 
+            <div class = 'large-3 cell'>  <%#= check_box_tag :user_ids, user.id, @announcement.user_ids.include?(user.id), :name => 'announcement[user_ids][]' %>  </div>
+            <div class = 'large-9 cell'> <%#= user.name %>  </div>
           </div>
 
-        <% end %>
+        <%# end %>
     </div>
 
   </div>
@@ -128,8 +128,8 @@
 
 
 
-<div class='row actions'>
-  <div class='large-4 columns'>
+<div class='grid-x actions'>
+  <div class='large-4 cell'>
     <%= f.submit %>
   </div>
 </div>

@@ -4,7 +4,6 @@ class CarsController < ApplicationController
   # GET /cars
   def index
     @cars = Car.all
-
   end
 
   # GET /cars/1
@@ -54,6 +53,6 @@ class CarsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def car_params
-      params.require(:car).permit(:color, :year, :brand, :model)
+      params.require(:car).permit(:user_id, :color, :name)
     end
 end

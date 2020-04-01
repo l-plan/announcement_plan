@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,100 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214124841) do
+ActiveRecord::Schema.define(version: 20200401092623) do
 
-  create_table "announcement_plan_announcements", force: :cascade do |t|
-    t.string   "title",               limit: 255
-    t.text     "tekst",               limit: 65535
-    t.datetime "start_announcing_at"
-    t.datetime "stop_announcing_at"
-    t.integer  "category_id",         limit: 4
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+  create_table "cars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.string "color"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "announcement_plan_announcements", ["category_id"], name: "index_announcement_plan_announcements_on_category_id", using: :btree
-  add_index "announcement_plan_announcements", ["start_announcing_at"], name: "index_announcement_plan_announcements_on_start_announcing_at", using: :btree
-  add_index "announcement_plan_announcements", ["stop_announcing_at"], name: "index_announcement_plan_announcements_on_stop_announcing_at", using: :btree
-  add_index "announcement_plan_announcements", ["title"], name: "index_announcement_plan_announcements_on_title", using: :btree
-
-  create_table "announcement_plan_announcements_role_sources", id: false, force: :cascade do |t|
-    t.integer "announcement_id", limit: 4
-    t.integer "role_source_id",  limit: 4
-  end
-
-  add_index "announcement_plan_announcements_role_sources", ["announcement_id"], name: "announcements_role_sources_announcement_id", using: :btree
-  add_index "announcement_plan_announcements_role_sources", ["role_source_id"], name: "announcements_role_sources_role_source_id", using: :btree
-
-  create_table "announcement_plan_announcements_tenants", id: false, force: :cascade do |t|
-    t.integer "announcement_id", limit: 4
-    t.integer "tenant_id",       limit: 4
-  end
-
-  add_index "announcement_plan_announcements_tenants", ["announcement_id"], name: "index_announcement_plan_announcements_tenants_on_announcement_id", using: :btree
-  add_index "announcement_plan_announcements_tenants", ["tenant_id"], name: "index_announcement_plan_announcements_tenants_on_tenant_id", using: :btree
-
-  create_table "announcement_plan_announcements_users", id: false, force: :cascade do |t|
-    t.integer "announcement_id", limit: 4
-    t.integer "user_id",         limit: 4
-  end
-
-  add_index "announcement_plan_announcements_users", ["announcement_id"], name: "index_announcement_plan_announcements_users_on_announcement_id", using: :btree
-  add_index "announcement_plan_announcements_users", ["user_id"], name: "index_announcement_plan_announcements_users_on_user_id", using: :btree
-
-  create_table "announcement_plan_categories", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.text     "color",      limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  add_index "announcement_plan_categories", ["name"], name: "index_announcement_plan_categories_on_name", using: :btree
-
-  create_table "announcement_plan_recipients", force: :cascade do |t|
-    t.integer  "announcement_id", limit: 4
-    t.integer  "user_id",         limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  add_index "announcement_plan_recipients", ["announcement_id"], name: "index_announcement_plan_recipients_on_announcement_id", using: :btree
-  add_index "announcement_plan_recipients", ["user_id"], name: "index_announcement_plan_recipients_on_user_id", using: :btree
-
-  create_table "cars", force: :cascade do |t|
-    t.string   "color",      limit: 255
-    t.integer  "year",       limit: 4
-    t.string   "brand",      limit: 255
-    t.string   "model",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "role_sources", force: :cascade do |t|
-    t.string   "naam",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "roles", force: :cascade do |t|
-    t.integer  "role_source_id", limit: 4
-    t.integer  "user_id",        limit: 4
-    t.integer  "tenant_id",      limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-  end
-
-  create_table "tenants", force: :cascade do |t|
-    t.string   "administration", limit: 255
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.integer  "tenant_id",  limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

@@ -1,5 +1,5 @@
 require 'test_helper'
-require 'pry-rails'
+# require 'pry-rails'
 # class AnnouncementPlanConfigurationTest <  ActiveSupport::TestCase
 
 describe AnnouncementPlan::Configuration do

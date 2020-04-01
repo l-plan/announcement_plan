@@ -21,7 +21,7 @@ class Announcements
 class Announcement
 	constructor: (ann) ->
 		@id = ann.id#.toString()#@getAnnouncement(announcement)
-		@tekst = ann.tekst
+		@txt = ann.txt
 		@title = ann.title
 		@color = ann.category_color
 		@start = ann.start_announcing_at
@@ -33,7 +33,7 @@ class Announcement
 		str += "<div class='postit' style='background-color: #{@color}' data-id='#{@id}' data-naam='rolf'>"
 		str += "<a class='postit_close'>&#215;</a>"
 		str += "<div class= 'postit_title'>#{@title}</div>"
-		str += "<div class= 'postit_tekst'>#{@tekst}</div>"
+		str += "<div class= 'postit_txt'>#{@txt}</div>"
 		str += "</div>"
 
 
@@ -64,8 +64,8 @@ $ ->
 
 
 
-$ ->
-  $('.mijnDatumInput').fdatepicker(format: 'dd-mm-yyyy,', weekStart: 1)
+# $ ->
+#   $('.mijnDatumInput').fdatepicker(format: 'dd-mm-yyyy,', weekStart: 1)
 
 
 root = exports ? window

@@ -1,2 +1,0 @@
-module RoleSourcesHelper
-end

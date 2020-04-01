@@ -1,6 +1,6 @@
 require 'test_helper'
 require 'minitest/autorun'
-require 'pry'
+# require 'pry'
 
 
 module AnnouncementPlan

@@ -1,51 +1,46 @@
-require 'test_helper'
+require "test_helper"
 
-class CarsControllerTest < ActionController::TestCase
+describe CarsController do
+  let(:car) { cars(:one) }
 
-  setup do
-
-    @car = cars(:car_1)
+  it "should get index" do
+    get cars_url
+    must_respond_with :success
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:cars)
+  it "should get new" do
+    get new_car_url
+    must_respond_with :success
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create car" do
-    assert_difference('Car.count') do
-      post :create, car: { brand: @car.brand, color: @car.color, model: @car.model, year: @car.year }
+  it "should create car" do
+    assert_difference("Car.count") do
+      post cars_url, params: { car: { color: @car.color, name: @car.name, user_id: @car.user_id } }
     end
 
-    assert_redirected_to car_path(assigns(:car))
+    must_redirect_to car_url(Car.last)
   end
 
-  test "should show car" do
-    get :show, id: @car
-    assert_response :success
+  it "should show car" do
+    get car_url(@car)
+    must_respond_with :success
   end
 
-  test "should get edit" do
-    get :edit, id: @car
-    assert_response :success
+  it "should get edit" do
+    get edit_car_url(@car)
+    must_respond_with :success
   end
 
-  test "should update car" do
-    patch :update, id: @car, car: { brand: @car.brand, color: @car.color, model: @car.model, year: @car.year }
-    assert_redirected_to car_path(assigns(:car))
+  it "should update car" do
+    patch car_url(@car), params: { car: { color: @car.color, name: @car.name, user_id: @car.user_id } }
+    must_redirect_to car_url(car)
   end
 
-  test "should destroy car" do
-    assert_difference('Car.count', -1) do
-      delete :destroy, id: @car
+  it "should destroy car" do
+    assert_difference("Car.count", -1) do
+      delete car_url(@car)
     end
 
-    assert_redirected_to cars_path
+    must_redirect_to cars_url
   end
 end

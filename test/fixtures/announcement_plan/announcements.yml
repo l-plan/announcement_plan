@@ -2,7 +2,7 @@
 
 announcement_1:
   title: titel1
-  tekst: MyText1
+  txt: MyText1
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 1
@@ -10,7 +10,7 @@ announcement_1:
 
 announcement_2:
   title: titel2
-  tekst: MyText2
+  txt: MyText2
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 2
@@ -18,7 +18,7 @@ announcement_2:
 
 announcement_3:
   title: titel3
-  tekst: MyText3
+  txt: MyText3
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 1
@@ -26,7 +26,7 @@ announcement_3:
 
 announcement_4:
   title: titel4
-  tekst: MyText4
+  txt: MyText4
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 2
@@ -34,7 +34,7 @@ announcement_4:
 
 announcement_5:
   title: titel5
-  tekst: MyText5
+  txt: MyText5
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 1
@@ -42,7 +42,7 @@ announcement_5:
 
 announcement_6:
   title: titel6
-  tekst: MyText6
+  txt: MyText6
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 2
@@ -50,7 +50,7 @@ announcement_6:
 
 announcement_7:
   title: titel7
-  tekst: MyText7
+  txt: MyText7
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 1
@@ -58,7 +58,7 @@ announcement_7:
 
 announcement_8:
   title: titel8
-  tekst: MyText8
+  txt: MyText8
   start_announcing_at: 2015-09-16 11:14:46
   stop_announcing_at: 2015-10-16 11:14:46
   category_id: 2

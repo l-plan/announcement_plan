@@ -1,49 +1,46 @@
-require 'test_helper'
+require "test_helper"
 
-class UsersControllerTest < ActionController::TestCase
-  setup do
-    @user = users(:user_1)
+describe UsersController do
+  let(:user) { users(:one) }
+
+  it "should get index" do
+    get users_url
+    must_respond_with :success
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:users)
+  it "should get new" do
+    get new_user_url
+    must_respond_with :success
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
-
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: { name: @user.name }
+  it "should create user" do
+    assert_difference("User.count") do
+      post users_url, params: { user: { id: @user.id, name: @user.name } }
     end
 
-    assert_redirected_to user_path(assigns(:user))
+    must_redirect_to user_url(User.last)
   end
 
-  test "should show user" do
-    get :show, id: @user
-    assert_response :success
+  it "should show user" do
+    get user_url(@user)
+    must_respond_with :success
   end
 
-  test "should get edit" do
-    get :edit, id: @user
-    assert_response :success
+  it "should get edit" do
+    get edit_user_url(@user)
+    must_respond_with :success
   end
 
-  test "should update user" do
-    patch :update, id: @user, user: { name: @user.name }
-    assert_redirected_to user_path(assigns(:user))
+  it "should update user" do
+    patch user_url(@user), params: { user: { id: @user.id, name: @user.name } }
+    must_redirect_to user_url(user)
   end
 
-  test "should destroy user" do
-    assert_difference('User.count', -1) do
-      delete :destroy, id: @user
+  it "should destroy user" do
+    assert_difference("User.count", -1) do
+      delete user_url(@user)
     end
 
-    assert_redirected_to users_path
+    must_redirect_to users_url
   end
 end

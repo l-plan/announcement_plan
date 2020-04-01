@@ -1,10 +1,10 @@
-<%= form_for(@car) do |f| %>
-  <% if @car.errors.any? %>
+<%= form_with(model: car, local: true) do |form| %>
+  <% if car.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@car.errors.count, "error") %> prohibited this car from being saved:</h2>
+      <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
       <ul>
-      <% @car.errors.full_messages.each do |message| %>
+      <% car.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,22 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_field :color %>
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :car_user_id %>
   </div>
+
   <div class="field">
-    <%= f.label :year %><br>
-    <%= f.number_field :year %>
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :car_color %>
   </div>
+
   <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :car_name %>
   </div>
-  <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
-  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= form.submit %>
   </div>
 <% end %>

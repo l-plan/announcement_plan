@@ -1,4 +1,4 @@
-require_dependency "announcement_plan/application_controller"
+# require_dependency "announcement_plan/application_controller"
 
 module AnnouncementPlan
   class RecipientsController < ApplicationController
