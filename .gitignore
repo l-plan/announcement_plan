@@ -8,3 +8,4 @@ test/dummy/tmp/
 test/dummy/.sass-cache
 .DS_Store
 test/dummy/node_modules/
+test/dummy/.byebug_history

@@ -1,0 +1,19 @@
+nl:
+  add: voeg %{str} toe
+  back: terug naar %{str}
+  edit: bewerk %{str}
+
+
+
+  
+  activerecord:
+    models:
+      announcement:
+        one: mededeling
+        other: mededelingen
+      announcement_center:
+        one: mededelingen home
+      category:
+        one: categorie
+        other: categorieën
+

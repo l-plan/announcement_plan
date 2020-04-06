@@ -2,40 +2,32 @@
 
 user_1:
   name: rolf
-  tenant_id: 1
   id: 1
 
 user_2:
   name: mandy
-  tenant_id: 2
   id: 2
 
 user_3:
   name: pepijn
-  tenant_id: 3
   id: 3
 
 user_4:
   name: olivier
-  tenant_id: 1
   id: 4
 
 user_5:
   name: jan
-  tenant_id: 1
   id: 5
 
 user_6:
   name: piet
-  tenant_id: 2
   id: 6
 
 user_7:
   name: klaas
-  tenant_id: 3
   id: 7
 
 user_8:
   name: harrie-bas
-  tenant_id: 1
   id: 8

@@ -1,5 +1,5 @@
 $ ->
-	format= 'dd-mm-yyyy'
+	format= 'dd-mm-yy'
 
 	startDate=
 		if $(document).find('.example').data('start')
@@ -29,7 +29,7 @@ $ ->
 
 
 	datePickerOptions =
-	  format: format
+	  dateFormat: format
 	  weekStart: 1
 	  # calendarWeeks: true
 	  autoclose: true
@@ -41,7 +41,7 @@ $ ->
 	  # todayHighlight: true
 	  closeButton: false,
 	  showOtherMonths: true,
-	  dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+	  dayNamesMin: ['S', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 	  # leftArrow:'LLLLLLLL'
 	  # rightArrow:'RRRRRRR',
 	  # currentText: "Now",

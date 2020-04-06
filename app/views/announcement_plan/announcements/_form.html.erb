@@ -32,6 +32,13 @@
         <%= f.label :title %>
         <%= f.text_field :title %>
       </div>
+      <div class='large-4 cell'>
+        &nbsp;
+      </div>
+      <div class='large-4 cell'>
+        <%= f.label :concept %>
+        <%= f.check_box :concept%>
+      </div>
     </div>
 
     <div class='grid-x'>
@@ -44,12 +51,12 @@
     <div class='grid-x'>
       <div class='large-3 cell'>
         <%= f.label :start_announcing_at %>
-        <%= f.text_field :start_announcing_at, class: 'myDate' %>
+        <%= f.text_field :start_announcing_at, class: 'myDate' , value: nld_ui(@announcement.start_announcing_at)%>
       </div>
 
       <div class='large-3 cell end'>
         <%= f.label :stop_announcing_at %>
-        <%= f.text_field :stop_announcing_at, class: 'myDate' %>
+        <%= f.text_field :stop_announcing_at, class: 'myDate', value: nld_ui(@announcement.stop_announcing_at) %>
       </div>
 
       <div class='large-6 cell'>
@@ -90,17 +97,25 @@
       </div>
     </div>
 
-    <div class = 'targets'>
-        <%# RoleSource.all.each do |r| %>
+    <div class = 'qtargets'>
+        <%# Role.names.each do |name| %>
           <div class = 'grid-x'> 
-            <div class = 'large-3 cell'>  <%#= check_box_tag :role_source_ids, r.id, @announcement.role_source_ids.include?(r.id), :name => 'announcement[role_source_ids][]' %>  </div>
-            <div class = 'large-9 cell'> <%#= r.naam %>  </div>
+            <div class = 'large-9 cell'> 
+              <%#= name[0]%>
+            </div>
+
+            <div class = 'large-3 cell'>
+              
+              <%#= check_box_tag :role_names %>
+            </div>
           </div>
 
         <%# end %>
     </div>
 
   </div>
+
+  <%=f.collection_check_boxes(:users_ids, Role.names, :first, :last)%>
 
   <div class = 'select_target'>
     

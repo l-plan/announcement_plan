@@ -1,0 +1,126 @@
+@mixin borders($size, $colour) {
+  border: $size solid $colour;
+  margin-top: 15px;
+  border-radius: 5px  5px;
+  // padding: 0.3rem 0.875rem 0.3rem;
+}
+
+.bordered {
+   @include borders(2px,blue);
+ }
+
+ #announcement_plan_announcements_html {
+    width: 90%;
+    position: fixed;   
+    z-index: 9;
+    opacity: 0.8; 
+    padding:2em;
+    height: 100px;
+ }
+
+  .postitNew {   
+  overflow: auto; 
+  width: 70%;
+  max-width: 30em;
+  margin: auto;
+  
+  .closeLink {
+    margin-bottom: 2em;
+  }
+
+  padding:2em;
+
+
+
+  border:1px solid #E8E8E8;  
+  font-family:'Bradley Hand';   
+  font-size:16px; 
+  border-bottom-right-radius: 60px 15px;
+  box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+  margin-bottom: 5em;
+
+
+  button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    margin-left: 70%;
+    font-size: 2em;
+  }
+  .title {
+    padding-bottom:2em;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+
+}
+
+ .postit {   
+  overflow: auto; 
+  height: 25em;
+
+
+  // margin: 25px;    
+  // min-height:10em;
+  min-width:40em;
+  /*max-height:250px;*/
+  padding:4em;
+  /*position:relative;   */
+  // margin-right: 50%;
+
+
+  border:1px solid #E8E8E8;  
+  /*border-top:60px solid #fdfd86;*/
+  font-family:'Bradley Hand';   
+  font-size:16px; 
+  /*font-weight: 900;     */
+  border-bottom-right-radius: 60px 15px;
+  // display:inline-block;    
+  // background: #ffff88;
+
+  /*position: absolute;*/
+  box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
+  margin-bottom: 5em;
+  .title {
+    padding-bottom:2em;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+}
+.postit_close{
+  position: absolute;
+  right: 3%;
+  top: 3%;
+
+
+}
+.postit_txt{
+  // padding-top:30px;
+}
+// .postit_title{
+//   padding-top:30px;
+//   font-weight: bolder;
+//   font-size:24px; 
+
+// }
+
+
+// .formTextArea {
+//   min-height: 15em;
+// }
+
+.toggleTarget ,label {
+  /*font-weight:500;*/
+  color:#00A8C5;
+}
+.targets {
+  display: none;
+}
+
+

@@ -11,6 +11,13 @@
 
   <body>
   	<div class='test'></div>
-    <%= yield %>
+    <div class='containert'>
+
+
+      <div id="announcement_plan_announcements_html" > <%=(render 'announcement_plan/announcements/postit') if @current_recipient%> </div>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
+

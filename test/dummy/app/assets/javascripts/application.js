@@ -10,5 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require announcement_plan/application
 //= require datepicker_dummy
+//= require rails-ujs
 //= require_tree .

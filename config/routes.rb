@@ -5,7 +5,7 @@ AnnouncementPlan::Engine.routes.draw do
   resources :announcements 
 
   resources :recipients
-  resources :cockpits
+  resources :home
 
-  root :to => "cockpits#index"
+  root :to => "home#index"
 end

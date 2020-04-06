@@ -1,0 +1,27 @@
+<div class='grid-x'>
+  <div class = 'large-4 small-12 medium-2 cell'></div>
+  <div class = 'large-4 small-12 medium-8 text-center cell'>
+      <div class='postit' style='background-color:<%= @current_recipient.announcement.category.color%>' >
+        <div class='grid-x'>
+          <div class = 'cell text-right'>
+            <%= form_with(model: @current_recipient, url: recipient_path(@current_recipient.id), local: false ) do |f|%>
+            <%=f.hidden_field :read, value:  Time.now%>
+            	<%=f.submit%>
+            <%end%>
+          </div>
+        </div>
+
+        <div class='grid-x'>
+          <div class = 'cell title'>
+            <%= @current_recipient.announcement.title %>
+          </div>
+        </div>
+        <div class='grid-x'>
+          <div class = 'cell'>
+            <%= @current_recipient.announcement.txt %>
+          </div>
+        </div>        
+      </div>
+  </div>
+  <div class = 'large-4 small-12 medium-2 cell'></div>
+</div>

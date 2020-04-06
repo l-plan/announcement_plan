@@ -12,5 +12,7 @@
  *
  *= require jquery.minicolors
  *= require announcement_plan/announcements
-
+ *= require announcement_plan/spectrum
+ *= require announcement_plan/categories
  */
+

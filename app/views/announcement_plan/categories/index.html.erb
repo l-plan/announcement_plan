@@ -1,29 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Categories</h1>
+<div class='grid-x'>
+  <div class='large-12'>
+      categorieën
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% @categories.each do |category| %>
 
-  <tbody>
-    <% @categories.each do |category| %>
-      <tr>
-        <td><%= category.name %></td> 
-        <td><canvas id="myCanvas" width="40" height="12" style="background-color:<%=category.color.blank? ? '#ffff88' : category.color %>;"></td>
-         <td><%= category.color %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%=render category, category: category%>
+<%end%>
 
-<br>
 
-<%= link_to 'New Category', new_category_path %>
+
+  <div class='grid-x bottom-actions'>
+
+      <div class='large-4 small-12 text-center cell'>
+        <%= link_to t('add', str: t('category', count: 1, scope: [:activerecord, :models]) ), new_category_path %>
+      </div>    
+      <div class='large-4 small-12 text-center cell'>
+        <%= link_to t('announcement_center',count: 1, scope: [:activerecord, :models]), root_path %>
+      </div>        
+      <div class='large-4 small-12 cell text-center'>
+        <%= link_to t('back', str: t('category', count: 2, scope: [:activerecord, :models]) ), categories_path %>
+      </div>      
+
+  </div>

@@ -11,15 +11,58 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+
+<div class='grid-x grid-margin-x'>
+  <div class='large-2 cell' >
+
+    <div class='grid-x'>
+      <div class='large-12 cell'>
+        <%= f.label :name%>
+      </div>
+    </div>
+
+    <div class='grid-x'>
+      <div class='large-12 cell'>
+        <%= f.text_field :name, id: :category_name %>
+      </div>
+    </div>
+
   </div>
-    <div class="field">
-    <%= f.label :color %><br>
-    <%= f.text_field :color , class: 'minicolors-input'%>
+
+  <div class='large-2 cell' >
+
+    <div class='grid-x'>
+      <div class='large-12 cell'>
+        <%= f.label :color%>
+      </div>
+    </div>
+
+    <div class='grid-x'>
+      <div class='large-12 cell'>
+        <%= f.text_field :color, id: :category_color, class: 'colorpicker', type: 'color' %>
+      </div>
+    </div>
+
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class='large-2 cell' >
+
+    <div class='grid-x'>
+      <div class='large-12 cell'>
+        &nbsp;
+      </div>
+    </div>
+
+    <div class='grid-x'>
+      <div class='large-12 cell'>
+        <%= f.submit%>
+      </div>
+    </div>
+
   </div>
+
+</div>
+
+
+
 <% end %>

@@ -1,0 +1,32 @@
+<!-- <div class='grid-x'>
+  <div class='large-2 cell'></div>
+  <div class='large-8 text-center cell'> -->
+
+
+      <div class='postitNew' style='background-color:<%= @current_recipient.announcement.category.color%>' >
+
+          <p class = 'closeLink'>
+            <%= form_with(model: @current_recipient, url: recipient_path(@current_recipient.id), local: false ) do |f|%>
+            <%=f.hidden_field :read, value:  Time.now%>
+            	<%=f.submit("X-close") %>
+
+            <%end%>
+          </p>
+
+
+
+          <p class = 'title'>
+            <%= @current_recipient.announcement.title %>
+          </p>
+
+          <p class = 'text'>
+            <%= @current_recipient.announcement.txt %>
+          </p>
+  
+      </div>
+<!-- 
+  </div>
+  <div class='large-2 cell'></div>
+</div> -->
+
+

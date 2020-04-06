@@ -45,3 +45,5 @@ $(function(){ $(document).foundation(); });
  // $(function(){
  //    $(".test").html("jQuery is working.");
  //  });
+
+ import '../src/font-awesome.js';

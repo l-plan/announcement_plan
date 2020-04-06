@@ -1,9 +1,33 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+user_1:
+  name: rolf
   id: 1
-  name: MyString
 
-two:
-  id: 1
-  name: MyString
+user_2:
+  name: mandy
+  id: 2
+
+user_3:
+  name: pepijn
+  id: 3
+
+user_4:
+  name: olivier
+  id: 4
+
+user_5:
+  name: jan
+  id: 5
+
+user_6:
+  name: piet
+  id: 6
+
+user_7:
+  name: klaas
+  id: 7
+
+user_8:
+  name: harrie-bas
+  id: 8

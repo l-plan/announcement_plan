@@ -15,5 +15,12 @@
  *= require foundation-sites/dist/css/foundation
  *= require jquery-ui-dist/jquery-ui
  *= require datepicker_dummy
- *= require jquery-ui
+ * require jquery-ui
+ *= require announcement_plan/application
  */
+
+
+.containert{
+    margin: 5em 2em 5em 2em;
+    min-height: 50em;
+}

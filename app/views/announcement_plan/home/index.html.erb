@@ -1,0 +1,69 @@
+
+
+<div class = 'grid-x'>
+	<div class = 'large-6 cell'>
+
+		<div class = 'grid-x'>
+			<div class = 'large-12 cell'>
+				categorieën
+			</div>
+		</div>
+
+		<%@categories.each do |category|%>
+		<div class = 'grid-x'>
+			<div class = 'large-1 small-2 cell'>
+
+				<div class='category_color' style='background-color: <%=category.color%>' >&nbsp;</div>
+				
+			</div>
+			<div class = 'large-1 small-1 cell'>&nbsp;</div>
+			<div class = 'large-8 small-8 cell'>
+				<%=category.name%>
+			</div>
+		</div>
+
+		<%end%>
+
+
+
+
+	</div>
+	<div class = 'large-6 cell'>
+
+			<%@announcements.each do |announcement|%>
+			<div class = 'grid-x'>
+				<div class = 'large-1 small-2 cell'>
+
+					<div class='category_color' style='background-color: <%=announcement&.category&.color%>' >&nbsp;</div>
+					
+				</div>
+				<div class = 'large-1 small-1 cell'>&nbsp;</div>
+				<div class = 'large-8 small-8 cell'>
+					<%=announcement.title%>
+				</div>
+			</div>
+
+			<%end%>
+
+
+
+	</div>
+</div>
+
+<div class = 'grid-x'>
+	<div class = 'large-6 cell'>
+		<div class = 'grid-x'>
+			<div class = 'large-12 cell'>
+				<%=link_to 'bewerk categorieën', categories_path%>
+			</div>
+		</div>
+	</div>
+
+	<div class = 'large-6 cell'>
+		<div class = 'row'>
+			<div class = 'large-6 columns'> <%=link_to 'start announcing!', new_announcement_path%></div>
+		</div>
+	</div>
+</div>
+
+

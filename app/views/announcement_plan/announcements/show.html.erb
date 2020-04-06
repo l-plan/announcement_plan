@@ -1,40 +1,77 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @announcement.title %>
-</p>
-
-
-<div class='row'>
-<div class='postit'><%= @announcement.txt %></div>
+<div class='grid-x'>
+  <div class = 'large-12 cell' id="notice" > <%= notice %></div>
 </div>
 
 
 
-<div class = 'row'>
-  <div class = 'large-12 columns' id="notice" > <%= notice %></div>
+<div class='grid-x'>
+  <div class = 'large-4 small-12 medium-12 cell'>
+    <div class = 'grid-x'>
+      <div class = 'large-6 small-12 cell'>
+        <label>Start announcing at:</label>
+      </div>
+      <div class = 'large-6 small-12 cell'>
+        <%= nldt @announcement.start_announcing_at %>
+      </div>
+    </div>
 
+    <div class = 'grid-x'>
+      <div class = 'large-6 small-12 cell'>
+        <label>Stop announcing at:</label>
+      </div>
+      <div class = 'large-6 small-12 cell'>
+        <%= nldt @announcement.stop_announcing_at %>
+      </div>
+    </div>
+
+    <div class = 'grid-x'>
+      <div class = 'large-6 small-12 cell'>
+        <label>Concept</label>
+      </div>
+      <div class = 'large-6 small-12 cell'>
+        <%=iconCheck? @announcement.concept %>
+      </div>
+    </div>
+
+  </div>
+  <div class = 'large-8 small-12 medium-12 text-center cell'>
+
+    <div class = 'large-12 small-12 medium-12 text-center cell'>
+        <div class='postit' style='background-color:<%=@announcement.category.color%>' >
+          <div class='grid-x'>
+            <div class = 'cell title'>
+              <%= @announcement.title %>
+            </div>
+          </div>
+          <div class='grid-x'>
+            <div class = 'cell'>
+              <%= @announcement.txt %>
+            </div>
+          </div>        
+        </div>
+    </div>
+
+  </div>
 </div>
 
-<div class = 'row'>
-  <div class = 'large-6 columns'> <label>Start announcing at:</label></div>
-  <div class = 'large-4 columns end'>   <%= @announcement.start_announcing_at %></div>
-</div>
 
-<div class = 'row'>
-  <div class = 'large-6 columns'> <label>Stop announcing at</label></div>
-  <div class = 'large-4 columns end'>  <%= @announcement.stop_announcing_at %></div>
-</div>
 
-<div class = 'row'>
-  <div class = 'large-6 columns'> <label>Category:</label></div>
-  <div class = 'large-4 columns end'> <%= @announcement.category.name %></div>
-</div>
+  <div class='grid-x bottom-actions'>
 
-<div class = 'row'>
-  <div class = 'large-6 columns'> <%= link_to 'Edit', edit_announcement_path(@announcement) %> |
-<%= link_to 'Back', announcements_path %></div>
+      <div class='large-4 small-12 text-center cell'>
+        <%= link_to t('edit', str: t('announcement', count: 1, scope: [:activerecord, :models]) ), edit_announcement_path(@announcement) %>
+      </div>    
+      <div class='large-4 small-12 text-center cell'>
+        <%= link_to t('announcement_center',count: 1, scope: [:activerecord, :models]), root_path %>
+      </div>        
+      <div class='large-4 small-12 cell text-center'>
+        <%= link_to t('back', str: t('announcement', count: 2, scope: [:activerecord, :models]) ), announcements_path %>
+      </div>      
 
-</div>
+  </div>
+
+
+
+
 

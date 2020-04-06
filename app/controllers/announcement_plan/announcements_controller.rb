@@ -34,6 +34,7 @@ module AnnouncementPlan
     def create
       # params[:announcement] = {tenant_ids: [],user_ids: []}.merge!(params[:announcement])
       @announcement = Announcement.new(announcement_params)
+      # byebug
 
       if @announcement.save
         redirect_to @announcement, notice: 'Announcement was successfully created.'
@@ -45,7 +46,7 @@ module AnnouncementPlan
     # PATCH/PUT /announcements/1
     def update
 
-      params[:announcement] = {tenant_ids: [],user_ids: []}.merge!(params[:announcement])
+
       if @announcement.update(announcement_params)
 
         redirect_to @announcement, notice: 'Announcement was successfully updated.'
@@ -68,7 +69,7 @@ module AnnouncementPlan
 
       # Only allow a trusted parameter "white list" through.
       def announcement_params
-        params.require(:announcement).permit(:title, :txt, :start_announcing_at, :stop_announcing_at, :category_id, :user_ids=>[])
+        params.require(:announcement).permit(:title, :txt, :start_announcing_at, :stop_announcing_at, :category_id, :concept, :role_names)
       
       end
   end

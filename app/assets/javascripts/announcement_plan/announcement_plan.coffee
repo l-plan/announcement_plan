@@ -47,13 +47,13 @@ class Announcement
 
 
 
-$ ->
-  new Announcements()
+# $ ->
+#   new Announcements()
 
-setInterval ->
-    $ ->
-      new Announcements()
-  , 60000
+# setInterval ->
+#     $ ->
+#       new Announcements()
+#   , 60000
 
 
 $ ->

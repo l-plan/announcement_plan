@@ -1,0 +1,16 @@
+<div class='grid-x'>
+
+	<div class='large-4 small-4 cell'>
+		<canvas id="myCanvas" width="40" height="12" style="background-color:<%=category.color.blank? ? '#ffff88' : category.color %>;">
+	</div>
+
+	<div class='large-4 small-4 cell'>
+		<%=category.name%>
+	</div>
+
+	<div class='sed-actions large-4 small-4 cell text-right'>
+		<%=link_to showIcon, action: :show, id: category.id %>
+		<%=link_to editIcon, action: :edit, id: category.id  %>
+		<%=link_to destroyIcon, url_for(action: :destroy,id: category.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+	</div>
+</div>
